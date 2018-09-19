@@ -1,0 +1,168 @@
+html {
+	height: 700px;
+	width: 1600px;
+	margin: 0 auto;
+}
+
+body {
+	background-image: url("images/bg-body.png");
+	margin: 0 auto;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.container {
+	margin: 0px auto;
+	width: 700px;
+	height: 100%;
+}
+
+.header {
+	background-image: url("images/bg-header.jpg");
+	height: 20%;
+	vertical-align: middle;
+	margin:0 auto;
+}
+
+.header>p {
+	position: absolute;
+	margin-top: 60px;
+	margin-left: 32px;
+	font-size: x-large;
+	color: #888888;
+	font-style: italic;
+}
+
+.menu {
+	background-image: url("images/bg-menu.png");
+	height:35px;
+	background-repeat: no-repeat;
+}
+
+.menu ul {
+	height:35px;
+	margin:0px;
+	padding-left: 0px;
+	list-style-type: none;
+	overflow: hidden;
+	padding: 0;
+}
+
+.menu li {
+	float: left;
+}
+
+.menu li a {
+	text-decoration: none;
+	padding-left: 13px;
+	padding-right: 13px;
+	text-align:center;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 11px;
+	color: white;
+}
+
+.body {
+	width: 700px;
+	height: 40%;
+}
+
+.body-data {
+	float: left;
+	width: 520px;
+}
+
+.body-data h3 {
+	color: #acc32a;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+
+#sub-title {
+	color: #888888;
+	font-size: x-small;
+	margin-left: 10px;
+}
+
+.body-data p {
+	font-size: small;
+	margin-left: 10px;
+}
+
+#comment {
+	font-size: small;
+	color: #68d8f0;
+}
+
+.body-table {
+	float: left;
+	width: 170px;
+	height: 58%;
+	background-image: url("images/bg-sidebar-bottom.gif");
+	background-size: 220px auto;
+	background-position: center;
+	background-repeat: repeat;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	overflow: hidden;
+}
+
+.footer {
+	background-image: url("images/bg-footer.jpg");
+	background-repeat: no-repeat;
+	background-size: inherit;
+	width: 700px;
+	height: 100px;
+	position: relative;
+	margin-bottom: 0px;
+	margin-top: 21%;
+}
+
+.footer p {
+	margin: unset;
+	margin-left: 15px;
+	padding-top: 60px;
+	color: white;
+	font-size: small;
+}
+
+#Feed {
+	background-image: url("images/bg-feed.gif");
+	height: 25px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center;	
+	background-size: initial;
+}
+
+#Feed img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Link {
+	margin-top: 20px;
+	font-size: small;
+	margin-left: 5px;
+}
+
+#Link a {
+	text-decoration: none;
+	color: black;
+}
+
+#Link td {
+	border-bottom: 1px solid;
+	border-color: #888;
+	width: 180px;
+}
+
+.clear {
+	clear: both;
+	width: 10px;
+}

@@ -1,0 +1,204 @@
+html,body {
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+p,ul {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#header {
+	width: 100%;
+	border-bottom: 3px solid black;
+	background-color: #206BA4;
+}
+
+#site-title {
+	float: left;
+	margin: 2% 0;
+	position: relative;
+	margin-left: 15px;
+}
+
+#site-title p {
+	margin: 0;
+	padding: 0;
+	font-size: x-large;
+}
+
+.clear {
+	clear: both;
+}
+
+#header-align {
+	float: left;
+	margin-top: 3%;
+	margin-left: 70px;
+}
+
+.link li {
+	float: left;
+	list-style-type: none;
+}
+
+.link li a {
+	text-align: center;
+	border-right: 1px solid black;
+	padding: 0px 2px;
+}
+
+#search-box {
+	float: right;
+	width: 20%;
+	border: 1px solid black;
+	border-radius: 10px;
+	height: 25px;
+	margin-right: 3%;
+	margin-top: 2.5%;
+}
+
+#search-box p {
+	margin: 4px 10px;
+}
+
+#main-content {
+	margin: 0 auto;
+	width: 100%;
+	background-color: #FFEBCD;
+}
+
+.left-side-box {
+	float: left;
+	width: 180px;
+	height: 750px;
+	border-right: 1px solid black;
+}
+
+.box {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	margin: 0px;
+	background-color: #EBF4FA;
+}
+
+#box-header-1 {
+	text-align: center;
+	background-color: #a1c4fd;
+	border-bottom: 3px solid black;
+	height: 25px;
+	vertical-align: middle;
+}
+
+#box-header-2 {
+	height: 25px;
+	text-align: center;
+	background-color: #a1c4fd;
+	border-bottom: 3px solid black;
+	border-top: 3px solid black;
+}
+
+.box p {
+	padding-top: 5px;
+	padding-bottom: 2px;
+	font-size: large;
+}
+
+.box li {
+	margin-left: 3px;
+	margin-top: 8px;
+	list-style-type: none;
+}
+
+.middle-box {
+	float: left;
+	width: 530px;	
+}
+
+#top-product {
+	margin-top: 0px;
+	height: 25px;
+	font-size: large;
+	text-align: left;
+	margin-left: 20px;
+	padding-top: 5px;
+}
+
+#upper-table {
+	border-spacing: 10px 0px;
+	border-collapse: separate;
+}
+
+#lower-table {
+	border-spacing: 10px 10px;
+	border-collapse: separate;
+}
+.table-content td {
+	border: 1px solid #888;
+	text-align: center;
+	height: 220px;
+	vertical-align: top;
+}
+
+.table-content td p {
+	font-size: 11px;
+}
+
+button {
+	border-radius: 5px;
+}
+
+img {
+	width: 160px;
+	height: 160px;
+	margin-top: 0px;
+}
+
+.page-select table {
+	border: 1px solid black;
+	border-radius: 5px;
+	border-spacing: 0px;
+	margin-left: 355px;
+}
+
+.page-select td {
+	border-right: 1px solid black;
+	width: 30px;
+	text-align: center;
+}
+
+.page-select a {
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+
+.right-side-box{
+	float: right;
+	width: 160px;
+	height: 750px;
+	border-left: 1px solid black;
+}
+
+.advertise-box {
+	width: 160px;
+	height: 600px;
+	border-bottom: 1px solid black;
+}
+
+#footer {
+	border-top: 1px solid black;
+	text-align: center;
+	background-color: #8DB87C;
+}
+
+#footer-align {
+	margin-left: 380px;
+}

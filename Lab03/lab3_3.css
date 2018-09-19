@@ -1,0 +1,115 @@
+			.containter {
+				width: 800px;
+				margin: 0 auto;
+			}
+			.header {
+				width: 800px;
+				height: 50px;
+				margin: 0 auto;
+				background-color: #888888;
+			}
+			.menu {
+				margin: 0 auto;
+				width: 800px;
+				background-color: #0000ff;
+				height: 50px;
+			}
+
+			.menu ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				padding-left: 30px;
+			}
+
+			.menu li {
+				float: left;
+			}
+			
+			.menu li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 10px;
+			}
+			
+			.main {
+				width: 800px;
+				margin: 0 auto;
+				padding: 0px;
+			}
+
+			.leftcol {
+				width: 250px;
+				float: left;
+				margin:0 auto;
+				padding: 0;
+			}
+
+			#toplink {
+				height: 150px;
+				background-color: #ffff00;
+				margin: 0 auto;
+				width: 250px;
+				padding:0;
+			}
+
+			#toplink ul {
+				margin: 0 auto;
+			}
+
+			#bottomlink {
+				background-color: #888888;
+				width: 250px;
+				height: 150px;
+				margin: 0 auto;
+			}
+
+			#bottomlink ul {
+				margin: 0 auto;
+			}
+			
+			.rightcol {
+				margin: 0 auto;
+				float: left;
+				width: 550px;	
+				font-size: 1.2em;
+			}
+			
+			.textbottom {
+				margin: 0 auto;
+				height: 128px;
+				width: 550px;
+			}
+			
+			#botleft {
+				float: left;
+				text-align: left;
+				margin: 0 auto;
+				background-color: #66ff66;
+				width: 275px;
+				height: 128px;
+				vertical-align: middle;
+			}
+
+			#botright {
+				float: left;
+				background-color: #ff0000;
+				vertical-align: middle;
+				margin: 0 auto;
+				text-align: left;
+				width: 275px;
+				height: 128px;
+			}
+			.footer {
+				margin: 0 auto;
+				width: 800px;
+				text-align: center;
+				background-color: #00f;
+				height: 50px;
+			}
+			
+			.footer h1 {
+				margin: 0 auto;
+			}
