@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title> Bai 2</title>
+</head>
+<body>
+		<form>
+			First Name	<input type="text" id="firstname" onblur="validate_name();">
+			<span> &#9784; 2 - 30 character </span>
+			<br><br>
+			Last Name <input type="text" id="lastname" onblur="validate_lastname()">
+			<span> &#9784; 2 - 30 character </span>
+			<br><br>
+			Email <input type="text" id="email" onblur="validate_mail()">
+			<br><br>
+			Password <input type="password" id="password" onblur="validate_password()">
+			<span> &#9784; 2 - 30 character </span>
+			<br><br>
+			Birthday <select name="day">
+					<option value="1"> 1 </option>
+					<option value="2"> 2 </option>
+					<option value="3"> 3 </option>
+					<option value="4"> 4 </option>
+					<option value="5"> 5 </option>
+					<option value="6"> 6 </option>
+					<option value="7"> 7 </option>
+					<option value="8"> 8 </option>
+					<option value="9"> 9 </option>
+					<option value="10"> 10 </option>
+					<option value="11"> 11 </option>
+					<option value="12"> 12 </option>
+					<option value="13"> 13  </option>
+					<option value="14"> 14 </option>
+					<option value="15"> 15 </option>
+					<option value="16"> 16 </option>
+					<option value="17"> 17 </option>
+					<option value="18"> 18 </option>
+					<option value="19"> 19 </option>
+					<option value="20"> 20 </option>
+					<option value="21"> 21 </option>
+					<option value="22"> 22 </option>
+					<option value="23"> 23 </option>
+					<option value="24"> 24 </option>
+					<option value="25"> 25 </option>
+					<option value="26"> 26 </option>
+					<option value="27"> 27 </option>
+					<option value="28"> 28 </option>
+					<option value="29"> 29 </option>
+					<option value="30"> 30 </option>
+					<option value="31"> 31 </option>
+				</select>	
+				<select name="month" onblur="validate_month()">
+					<option value="1"> 1 </option> <option value="2"> 2 </option> <option value="3"> 3 </option> <option value="4"> 4 </option>
+					<option value="5"> 5 </option>
+					<option value="6"> 6 </option>
+					<option value="7"> 7 </option>
+					<option value="8"> 8 </option>
+					<option value="9"> 9 </option>
+					<option value="10"> 10 </option>
+					<option value="11"> 11 </option>
+					<option value="12"> 12 </option>
+				</select>
+				<select name="year" onblur="validate_year()">
+					<option value="1997"> 1997 </option>
+					<option value="1998"> 1998 </option>
+					<option value="1999"> 1999 </option>
+					<option value="2000"> 2000 </option>
+					<option value="2001"> 2001 </option>
+					<option value="2002"> 2002 </option>
+					<option value="2003"> 2003 </option>
+					<option value="2004"> 2004 </option>
+					<option value="2005"> 2005 </option>
+					<option value="2006"> 2006 </option>
+					<option value="2007"> 2007 </option>
+					<option value="2008"> 2008 </option>
+				</select>
+				<br><br>
+		Gender <input type="radio" name="gender" value="Male"> Male
+			<input type="radio" name="gender" value="Female"> Female
+			<br><br>
+		Country <select name="country">
+					<option value="Viet Nam"> Viet Nam </option>
+					<option value="Australia"> Australia </option>
+					<option value="United States"> United States </option>
+					<option value="India"> India </option>
+					<option value="Other"> Other </option>
+		</select>
+			<br><br>
+		About
+		<br>
+	   	<textarea rows="10" cols="10" id="textfield" onblur="validate_text_length()"></textarea>
+		<br><br>
+		<input type="submit" value="Submit" onclick="alert('Complete')">
+		<input type="reset" value="Reset">
+		</form>
+<script>
+function validate_character(name) {
+	// Name inclue A-Z and a-z and space
+	var validator = /^[A-Za-z\s]+$/; 
+	return	validator.test(name);
+}
+
+function validate_length(length) {
+	if (length >= 2 && length <= 30) {
+			return true;
+	}
+	else {
+			return false;
+	}
+}
+
+function validate_email(email) {
+	// Email with st@st.st format
+	var validator = /\S+@\S+\.\S+/;
+	return validator.test(email);		
+}
+
+function validate_month_r(day, month) {
+		var fully_month = [1,3,5,7,8,10,12];
+		// Check if 31 on fully_month or not
+		if (day == 31) {
+				for (var i = 0; i < fully_month.length; i++) {
+						if (fully_month[i] == month){
+								return true;
+						}
+						else 
+						{
+								alert("Thang " + month +" khong co 31 ngay");
+								return false;
+						}
+				}
+		}
+		// Check if day = 30 and month != 2
+		if (day == 30) {
+			if (month == 2) {
+					alert("Thang 2 khong co 30 ngay");
+					return false;
+			}
+		}
+		// return true for all normal day
+		return true;		
+}
+
+function validate_year_r(day, month, year) {
+		if ( day == 29 && month == 2) {
+			if ( year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+				return true;
+			}
+			return false;
+		}	
+		return true;
+}
+		
+
+function validate_text_length_r(textarea) {
+		// Maximum length is 10000
+		if (textarea.length > 10000) {
+			return false;	
+		}
+		return true;
+}
+
+function validate_name() {
+  	 var name = document.getElementById('firstname').value;
+	 var result = validate_character(name);
+	 if (result == false) {
+			 alert(name + " is not a name");
+			 return;
+	 }
+	 result = validate_length(name.length);
+	 if (result == false) {
+			 alert("Chuoi tu 2 - 30 ki tu");
+			 return;
+	 }
+}
+	   		   
+function validate_lastname() {
+	var name = document.getElementById('lastname').value;
+	var result = validate_character(name);
+	if (result == false) {
+			 alert(name + " is not a last name");
+			 return;
+	 }
+	 result = validate_length(name.length);
+	 if (result == false) {
+			 alert("Chuoi tu 2 - 30 ki tu");
+			 return;
+	 }
+}
+
+function validate_password() {
+	var name = document.getElementById('password').value;
+	var result = validate_character(name);
+	result = validate_length(name.length);
+	if (result == false) {
+			 alert("Chuoi tu 2 - 30 ki tu");
+			 return;
+	 }
+}
+
+
+function validate_mail() {
+	var email = document.getElementById('email').value;
+	var result = validate_email(email);
+	if (result == false) {
+		alert(email + " khong phai la email");
+	}	
+}
+
+function validate_text_length() {
+	var text = document.getElementById('textfield').value;
+	var result = validate_text_length_r(text);
+	if (result == false) {
+		alert("Noi dung qua dai");
+	}
+}
+
+function validate_month() {
+	var day = document.getElementsByName('day')[0].value;
+	day = parseInt(day);
+	var month = document.getElementsByName('month')[0].value;
+	month = parseInt(month);
+	var result = validate_month_r(day, month);
+}
+
+function validate_year() {
+	var day = document.getElementsByName('day')[0].value;
+	day = parseInt(day);
+	var month = document.getElementsByName('month')[0].value;
+	month = parseInt(month);
+	var year = document.getElementsByName('year')[0].value;
+	year = parseInt(year);
+	var result = validate_year_r(day, month, year);
+	if (result == false) {
+		alert(year + " khong la nam nhuan");
+	}
+}
+
+</script>
+
+</body>
+</html>
