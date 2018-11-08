@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> lab 9</title>
+</head>
+<body>
+	<form action="index.php" method="post">
+	Action:
+	<select id="action" onchange="selection_callback()" name="action">
+		<option value="insert"> Insert </option>
+		<option value="modify"> Modify </option>
+		<option value="delete"> Delete </option> 
+		<option value="null" selected> NULL
+	</select>
+	<br><br>
+	Id: <input type="text" name="id" class="field" disabled>
+	<br><br>
+	Name: <input type="text" name="name" class="field" disabled>
+	<br><br>
+	Year: <input type="text" name="year" class="field" disabled>
+	<br><br>
+	<input type="submit" name="submit" value="submit">
+	<br><br>
+</form>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "examples";
+
+// Create connection to database
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+	die("Connection failed: ". mysqli_connect_error());
+}
+
+$sql = "SELECT id, name, year FROM cars";
+$result = mysqli_query($conn, $sql);
+
+echo "<table border=\"1\">";
+if (mysqli_num_rows($result) > 0) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		echo "<tr> <td>". $row["id"]. "</td><td>". $row["name"]."</td><td>". $row["year"]. "</td></tr>"; 
+	}
+}
+mysqli_close($conn);
+?>
+
+	<script>
+	function selection_callback(action) {
+	var action = document.getElementById("action").value;
+	var sel = document.getElementsByClassName("field");
+	console.log(action);
+	if (action == "insert")
+	{
+		console.log("get insert success");
+		sel[0].disabled = false;
+		sel[1].disabled = false;
+		sel[2].disabled = false;
+	}
+	else if (action == "modify")
+	{
+		console.log("get modify success");
+		sel[0].disabled = false;
+		sel[1].disabled = false;
+		sel[2].disabled = false;
+	}
+	else if(action == "delete")
+	{
+		console.log("get delete success");
+		sel[0].disabled = false;
+		sel[1].disabled = true;
+		sel[2].disabled = true;
+	}
+	else 
+	{
+		sel[0].disabled = true;
+		sel[1].disabled = true;
+		sel[2].disabled = true;
+	}
+	}
+	</script>
+</body>
+</html>
+
