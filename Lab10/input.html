@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> lab 9</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<form>
+	Action:
+	<select id="action" onchange="selection_callback()">
+		<option value="insert"> Insert </option>
+		<option value="modify"> Modify </option>
+		<option value="delete"> Delete </option> 
+		<option value="null" selected> NULL
+	</select>
+	<br><br>
+	Id: <input type="text" name="id" class="field" disabled>
+	<br><br>
+	Name: <input type="text" name="name" class="field" disabled>
+	<br><br>
+	Year: <input type="text" name="year" class="field" disabled>
+</form>
+<br>
+<button onclick="DataPackage()"> Submit </button>
+<br>
+<button onclick="HiddenTable()"> Toggle </button>
+<div class="table">
+</div>
+<script>
+	var id;
+	var name; 
+	var year;
+	var act;
+	function selection_callback(action) {
+	var action = document.getElementById("action").value;
+	act = action;
+	var sel = document.getElementsByClassName("field");
+	if (action == "insert")
+	{
+		console.log("get insert success");
+		sel[0].disabled = false;
+		sel[1].disabled = false;
+		sel[2].disabled = false;
+	}
+	else if (action == "modify")
+	{
+		console.log("get modify success");
+		sel[0].disabled = false;
+		sel[1].disabled = false;
+		sel[2].disabled = false;
+	}
+	else if(action == "delete")
+	{
+		console.log("get delete success");
+		sel[0].disabled = false;
+		sel[1].disabled = true;
+		sel[2].disabled = true;
+	}
+	else 
+	{
+		sel[0].disabled = true;
+		sel[1].disabled = true;
+		sel[2].disabled = true;
+	}
+	}
+	
+	function DataPackage(){
+		console.log(action);
+		id = $(".field")[0].value;
+		name = $(".field")[1].value; 
+		year = $(".field")[2].value;
+		var data = 'id=' + id + '&name=' + name +'&year=' + year + '&action=' + act;
+		$.ajax({url: 'index.php',
+			type: 'POST',
+			data: data,
+	   		success: function ( data ){
+				 var car  = JSON.parse(data);
+				 var text = "<table border = \"1\">";
+				 console.log(car);
+				 for (x in car) {
+					 text += "<tr><td>" +car[x].id + "</td><td>" + car[x].name + "</td><td>" +car[x].year + "</td>";
+					 console.log(x);
+				 }
+				 $(".table").html(text);
+			}
+		});
+	}
+	$(document).ready(DataPackage());
+	function HiddenTable() {
+		$("table").toggle();
+	}
+	
+</script>
+</body>
+</html>
+
